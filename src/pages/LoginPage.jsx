@@ -57,7 +57,7 @@ export default function LoginPage() {
           <div className="login-panel">
             <div className="login-header">
               <h1>Masuk ke akun</h1>
-              <p>Gunakan email dan password dari database (contoh: owner@gmail.com / 12345).</p>
+              <p>Gunakan email dan password yang telah dibuat.</p>
             </div>
 
             {error ? (
