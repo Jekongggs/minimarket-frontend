@@ -44,7 +44,7 @@ export default function LoginPage() {
             <div className="login-visual-header">
               <div className="brand-mark">M</div>
               <div>
-                <h2 className="brand-title">Minimarket Pro</h2>
+                <h2 className="brand-title">Edja Corner</h2>
                 <p className="brand-tagline">Sistem manajemen minimarket yang rapi dan modern.</p>
               </div>
             </div>
