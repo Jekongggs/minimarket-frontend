@@ -10,11 +10,10 @@ export default function KatalogNav({
 }) {
   return (
     <nav className="customer-nav">
-      <div className="nav-container">
-        <div className="logo">
-          <img src="https://via.placeholder.com/40x40/6366f1/ffffff?text=M" alt="" />
-          <span>Minimarket Pro</span>
-        </div>
+      <div className="logo">
+  <img src="/images/logo edja.png" alt="Logo Edja Corner" style={{ borderRadius: '8px', width: '40px', height: '40px', objectFit: 'cover' }} />
+  <span>Edja Corner</span>
+</div>
 
         <div className="nav-search">
           <input
