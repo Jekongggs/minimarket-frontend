@@ -10,10 +10,13 @@ export default function KatalogNav({
 }) {
   return (
     <nav className="customer-nav">
-      <div className="logo">
-  <img src="/images/logo edja.png" alt="Logo Edja Corner" style={{ borderRadius: '8px', width: '40px', height: '40px', objectFit: 'cover' }} />
-  <span>Edja Corner</span>
-</div>
+      <div className="nav-container">
+        
+        {/* Bagian Logo yang baru */}
+        <div className="logo">
+          <img src="/images/logo edja.png" alt="Logo Edja Corner" style={{ borderRadius: '8px', width: '40px', height: '40px', objectFit: 'cover' }} />
+          <span>Edja Corner</span>
+        </div>
 
         <div className="nav-search">
           <input
@@ -81,6 +84,7 @@ export default function KatalogNav({
           />
           <span>{currentCustomer?.name || 'Guest'}</span>
         </div>
+        
       </div>
     </nav>
   );
