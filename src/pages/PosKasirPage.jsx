@@ -160,12 +160,13 @@ export default function PosKasirPage() {
 
       <div className="dashboard-container">
         <div className={`sidebar${s.sidebarOpen ? ' active' : ''}`}>
+          
+          {/* BAGIAN HEADER SIDEBAR (LOGO & NAMA) */}
           <div className="sidebar-header">
-            <div className="sidebar-brand-logo" aria-hidden="true">
-              <i className="fas fa-store" />
-            </div>
-            <h3>Minimarket Pro</h3>
+            <img src="/images/logo edja.png" alt="Logo Edja Corner" style={{ width: '40px', height: '40px', borderRadius: '8px', objectFit: 'cover' }} />
+            <h3>Edja Corner</h3>
           </div>
+          
           <div className="user-info">
             <div className="user-avatar">AD</div>
             <div>
@@ -229,9 +230,12 @@ export default function PosKasirPage() {
                 <p className="dashboard-hero__lead">Pantau stok, rekap transaksi, dan pesanan online dari satu tempat.</p>
                 <div className="dashboard-hero-meta">
                   <span id="dashDate">{s.dashDate}</span>
+                  
+                  {/* TEKS NAMA TOKO DI DASHBOARD HERO */}
                   <span>
-                    <i className="fas fa-store" /> Minimarket Pro
+                    <i className="fas fa-store" /> Edja Corner
                   </span>
+                  
                 </div>
               </div>
               <div className="stat-cards">
