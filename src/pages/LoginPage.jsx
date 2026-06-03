@@ -42,7 +42,10 @@ export default function LoginPage() {
         <div className="login-container login-split">
           <div className="login-visual">
             <div className="login-visual-header">
-              <div className="brand-mark">M</div>
+              
+              {/* BAGIAN LOGO YANG BARU */}
+              <img src="/images/logo edja.png" alt="Logo Edja Corner" style={{ width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover', marginRight: '15px' }} />
+              
               <div>
                 <h2 className="brand-title">Edja Corner</h2>
                 <p className="brand-tagline">Sistem manajemen minimarket yang rapi dan modern.</p>
@@ -106,19 +109,4 @@ export default function LoginPage() {
               </div>
 
               <button type="submit" className="btn-login" disabled={loading}>
-                {loading ? 'Memproses...' : 'Login'}
-              </button>
-            </form>
-
-            <div className="login-footer">
-              <p>
-                Belum punya akun customer? <Link to="/register">Daftar sebagai Customer</Link>
-              </p>
-              <p className="login-copy">&copy; 2026 Minimarket Pro</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+                {loading ?
