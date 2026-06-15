@@ -108,5 +108,20 @@ export default function LoginPage() {
                 </Link>
               </div>
 
-              <button type="submit" className="btn-login" disabled={loading}>
-                {loading ?
+                            <button type="submit" className="btn-login" disabled={loading}>
+                {loading ? 'Memuat...' : 'Masuk'}
+              </button>
+            </form>
+
+            <div className="login-footer">
+              <p>
+                Belum punya akun? <Link to="/register">Daftar</Link>
+              </p>
+              <p className="login-copy">&copy; 2026 Edja Corner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
