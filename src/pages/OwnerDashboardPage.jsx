@@ -4,6 +4,7 @@ import { OwnerOrdersTab } from '../owner/OwnerOrderSection.jsx';
 import { OwnerModals } from '../owner/OwnerModals.jsx';
 import ProductImg from '../katalog/ProductImg.jsx';
 import SalesChart from '../owner/SalesChart.jsx';
+import OmsetProfitChart from '../owner/OmsetProfitChart.jsx';
 import '../styles/owner-dashboard.css';
 
 function roleBadge(role) {
@@ -313,10 +314,74 @@ export default function OwnerDashboardPage() {
                     <div className="card">
                       <div className="card-header">
                         <h3>Grafik Penjualan 7 Hari Terakhir</h3>
-                        <span className="orders-spa__muted">Data real-time</span>
+                        <span className="orders-spa__muted">Online + POS · refresh otomatis 30 detik</span>
                       </div>
                       <div className="card-body">
                         <SalesChart data={salesChart} height={250} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="card">
+                      <div className="card-header">
+                        <h3>Grafik Omset &amp; Profit 7 Hari</h3>
+                        <span className="orders-spa__muted">Online + POS · refresh otomatis 30 detik</span>
+                      </div>
+                      <div className="card-body">
+                        <OmsetProfitChart data={salesChart} height={250} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col-6">
+                    <div className="card">
+                      <div className="card-header">
+                        <h3>Produk dengan Stok Menipis</h3>
+                        <a
+                          href="#inv"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            switchTab('inventaris');
+                          }}
+                        >
+                          Lihat Semua
+                        </a>
+                      </div>
+                      <div className="card-body">
+                        <table className="data-table">
+                          <thead>
+                            <tr>
+                              <th>Produk</th>
+                              <th>Kategori</th>
+                              <th>Stok Saat Ini</th>
+                              <th>Stok Minimum</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {lowStockProducts.length === 0 ? (
+                              <tr>
+                                <td colSpan={5} style={{ textAlign: 'center', color: '#6b7280', padding: 24 }}>
+                                  Tidak ada stok menipis
+                                </td>
+                              </tr>
+                            ) : (
+                              lowStockProducts.slice(0, 8).map((p) => (
+                                <tr key={p.id}>
+                                  <td>{p.name}</td>
+                                  <td>{p.category}</td>
+                                  <td>{p.stock}</td>
+                                  <td>{getMinStock(p)}</td>
+                                  <td>
+                                    <span className="stock-badge stock-warning">Menipis</span>
+                                  </td>
+                                </tr>
+                              ))
+                            )}
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
@@ -355,55 +420,6 @@ export default function OwnerDashboardPage() {
                         </table>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="card">
-                  <div className="card-header">
-                    <h3>Produk dengan Stok Menipis</h3>
-                    <a
-                      href="#inv"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        switchTab('inventaris');
-                      }}
-                    >
-                      Lihat Semua
-                    </a>
-                  </div>
-                  <div className="card-body">
-                    <table className="data-table">
-                      <thead>
-                        <tr>
-                          <th>Produk</th>
-                          <th>Kategori</th>
-                          <th>Stok Saat Ini</th>
-                          <th>Stok Minimum</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {lowStockProducts.length === 0 ? (
-                          <tr>
-                            <td colSpan={5} style={{ textAlign: 'center', color: '#6b7280', padding: 24 }}>
-                              Tidak ada stok menipis
-                            </td>
-                          </tr>
-                        ) : (
-                          lowStockProducts.slice(0, 8).map((p) => (
-                            <tr key={p.id}>
-                              <td>{p.name}</td>
-                              <td>{p.category}</td>
-                              <td>{p.stock}</td>
-                              <td>{getMinStock(p)}</td>
-                              <td>
-                                <span className="stock-badge stock-warning">Menipis</span>
-                              </td>
-                            </tr>
-                          ))
-                        )}
-                      </tbody>
-                    </table>
                   </div>
                 </div>
               </div>

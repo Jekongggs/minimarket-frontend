@@ -118,6 +118,16 @@ export function useOwnerDashboard() {
     loadFromApi().catch((err) => showToast(err.message || 'Gagal memuat data owner.'));
   }, [dataVersion, loadFromApi, showToast]);
 
+  useEffect(() => {
+    if (activeTab !== 'dashboard') return undefined;
+
+    const intervalId = window.setInterval(() => {
+      loadFromApi().catch(() => {});
+    }, 30000);
+
+    return () => window.clearInterval(intervalId);
+  }, [activeTab, loadFromApi]);
+
   const closeModal = useCallback(() => setModal(null), []);
 
   const storedUser = getStoredUser();

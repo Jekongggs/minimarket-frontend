@@ -47,6 +47,41 @@
   box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
 }
 
+.katalog-root .promo-banner--marquee {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+  padding: 14px 0;
+}
+
+.katalog-root .promo-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.katalog-root .promo-marquee__track {
+  display: inline-flex;
+  min-width: max-content;
+  animation: promo-scroll 16s linear infinite;
+}
+
+.katalog-root .promo-marquee__track span {
+  display: inline-block;
+  padding-right: 2rem;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@keyframes promo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .katalog-root .filter-bar {
   border: 1px solid rgba(15, 23, 42, 0.06);
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);

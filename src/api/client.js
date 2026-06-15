@@ -130,4 +130,15 @@ export const api = {
   listReturns: () => apiFetch('/stock/returns'),
   getLowStock: () => apiFetch('/stock/low'),
   getDashboardMetrics: () => apiFetch('/dashboard/metrics'),
+  posCheckout: (items) =>
+    apiFetch('/transactions/checkout', {
+      method: 'POST',
+      body: JSON.stringify({
+        items: items.map((item) => ({
+          productId: item.productId,
+          quantity: item.quantity ?? item.qty ?? 1,
+        })),
+      }),
+    }),
+  getPosHistory: () => apiFetch('/transactions/history'),
 };
