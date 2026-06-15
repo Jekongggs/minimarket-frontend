@@ -8,6 +8,9 @@ const PRODUCT_FILES = {
   'teh-botol': '/images/products/teh-botol.jpg',
   'roti-tawar': '/images/products/roti-tawar.jpg',
   'susu-uht': '/images/products/susu-uht.jpg',
+  // TAMBAHAN GAMBAR KAMU:
+  'sabun-cuci': '/images/sabun.jpg',
+  'sari-roti': '/images/sari roti coklat.jpg',
 };
 
 const KEYWORD_RULES = [
@@ -18,10 +21,11 @@ const KEYWORD_RULES = [
   { test: /gula/i, file: 'gula-pasir' },
   { test: /kopi|coffee/i, file: 'kopi-sachet' },
   { test: /teh|tea|teh\s*botol/i, file: 'teh-botol' },
-  { test: /roti|bread/i, file: 'roti-tawar' },
   { test: /susu|milk|uht/i, file: 'susu-uht' },
   { test: /chitato|keripik|snack/i, file: 'indomie-goreng' },
-  { test: /sabun|deterjen|shampo/i, file: 'minyak-goreng' },
+  // ATURAN YANG SUDAH DIPERBAIKI:
+  { test: /roti|bread/i, file: 'sari-roti' },
+  { test: /sabun|deterjen|shampo/i, file: 'sabun-cuci' },
 ];
 
 const CATEGORY_FALLBACK = {
@@ -82,7 +86,6 @@ export function productImgUrl(name, size = 400, product = null) {
     } else if (/^\d{10,}-/.test(img)) {
       return `/uploads/products/${img}`;
     }
-    /* nama file lama di DB (mis. chitato.jpg) — pakai fallback kata kunci / placeholder */
   }
 
   const key = resolveFileKey(name, product);
