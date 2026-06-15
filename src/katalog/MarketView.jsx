@@ -50,8 +50,8 @@ export default function MarketView({
       <div className="customer-main">
         <div className="promo-banner">
           <img
-            src="https://via.placeholder.com/900x160/6366f1/ffffff?text=Belanja+Mudah+%7C+Antar+Cepat"
-            alt="Promo"
+           <span>PROMO !!! · </span>
+<span aria-hidden="true">PROMO !!! · </span>
           />
         </div>
 
