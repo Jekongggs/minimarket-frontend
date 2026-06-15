@@ -48,12 +48,13 @@ export default function MarketView({
       </div>
 
       <div className="customer-main">
+        {/* === BAGIAN YANG ERROR UDAH DIBENERIN DI SINI === */}
         <div className="promo-banner">
-          <img
-           <span>PROMO !!! · </span>
-<span aria-hidden="true">PROMO !!! · </span>
-          />
+          <img src="" alt="Promo Banner" />
+          <span>PROMO !!! · </span>
+          <span aria-hidden="true">PROMO !!! · </span>
         </div>
+        {/* ================================================= */}
 
         <div className="filter-bar">
           <div className="sort-options">
