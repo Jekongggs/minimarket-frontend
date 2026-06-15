@@ -43,9 +43,17 @@ export default function LoginPage() {
           <div className="login-visual">
             <div className="login-visual-header">
               
-              {/* BAGIAN LOGO YANG BARU */}
-              <img src="/images/logo edja.png" alt="Logo Edja Corner" style={{ width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover', marginRight: '15px' }} />
-              
+             <img
+  src="/images/logo edja.png"
+  alt="Logo Edja Corner"
+  style={{
+    width: '60px',
+    height: '60px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    marginRight: '15px',
+  }}
+/>              
               <div>
                 <h2 className="brand-title">Edja Corner</h2>
                 <p className="brand-tagline">Sistem manajemen minimarket yang rapi dan modern.</p>
